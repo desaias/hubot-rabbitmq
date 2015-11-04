@@ -2,7 +2,7 @@
 #   Keep track of you ping pong games
 #
 # Configuration:
-#   HUBOT_RABBITMQ_URL  (ie: "https://domain.com")
+#   HUBOT_RABBITMQ_DOMAIN  (ie: "www.domain.com")
 #   HUBOT_RABBITMQ_PORT (ie: 15672)
 #   HUBOT_RABBITMQ_USER (default: guest)
 #   HUBOT_RABBITMQ_PASS (default: guest)
@@ -18,15 +18,12 @@
 
 module.exports = (robot) ->
   robot.respond /rabbitmq stats/i, (msg) ->
-    domain = process.env.HUBOT_RABBITMQ_URL
+    domain = process.env.HUBOT_RABBITMQ_DOMAIN
     port = process.env.HUBOT_RABBITMQ_PORT
     user = process.env.HUBOT_RABBITMQ_USER
     pass = process.env.HUBOT_RABBITMQ_PASS
 
-    url = domain + ':' + port
-    auth = 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
-    msg.http(url + '/api/overview?columns=message_stats')
-      .headers(Authorization: auth, Accept: 'application/json')
+    robot.http("http://#{user}:#{pass}@#{domain}:#{port}/api/overview?columns=message_stats")
       .get() (err, res, body) ->
         switch res.statusCode
           when 404
@@ -36,6 +33,7 @@ module.exports = (robot) ->
           when 200
             try
               json = JSON.parse(body)
+              json = json.message_stats
               msg.send "RabbitMQ Stats:\n
                 published: #{json.publish}\n
                 published rate: #{json.publish_details.rate}\n
