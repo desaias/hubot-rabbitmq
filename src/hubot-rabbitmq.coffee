@@ -23,7 +23,7 @@ module.exports = (robot) ->
     user = process.env.HUBOT_RABBITMQ_USER
     pass = process.env.HUBOT_RABBITMQ_PASS
 
-    url = doman + ':' + port
+    url = domain + ':' + port
     auth = 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
     msg.http(url + '/api/overview?columns=message_stats')
       .headers(Authorization: auth, Accept: 'application/json')
