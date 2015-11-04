@@ -1,6 +1,6 @@
 # hubot-rabbitmq
 
-Get stats from your RabbitMQ instance.
+Get stats from your RabbitMQ instance.  Requires the RabbitMQ Management Plugin to be enabled.
 
 See [`src/hubot-rabbitmq.coffee`](src/hubot-rabbitmq.coffee) for full documentation.
 
