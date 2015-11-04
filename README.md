@@ -13,7 +13,7 @@ In hubot project repo, run:
 Then add **hubot-rabbitmq** to your `external-scripts.json`:
 
 ```json
-["hubot-pingpong"]
+["hubot-rabbitmq"]
 ```
 
 **Also make sure to add the following environment variables:**
