@@ -1,5 +1,5 @@
 # Description
-#   Keep track of you ping pong games
+#   Gets stats from your RabbitMQ instance
 #
 # Configuration:
 #   HUBOT_RABBITMQ_DOMAIN  (ie: "www.domain.com")
@@ -11,7 +11,8 @@
 #   hubot rabbitmq stats
 #
 # Notes:
-#   <optional notes required for the script>
+#   This makes requests to the RabbitMQ Management plugin api, so if you don't hvae that enabled,
+#   this probably won't work.
 #
 # Author:
 #   desaias
