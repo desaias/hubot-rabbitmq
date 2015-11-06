@@ -73,7 +73,7 @@ module.exports = (robot) ->
                 messages ready: #{json.messages_ready}\n
                 messages ready rate: #{json.messages_ready_details.rate}\n
                 unacknowledged: #{json.messages_unacknowledged}\n
-                unacknowledged rate: #{json.messages_unacknowledged_details.rate}\n
+                unacknowledged rate: #{json.messages_unacknowledged_details.rate}\n"
             catch error
               msg.send "Something went wrong parsing data"
           else
