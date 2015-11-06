@@ -1,7 +1,7 @@
 {
   "name": "hubot-rabbitmq",
   "description": "See stats from your RabbitMQ instance",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "desaias <git@davidesaias.com>",
   "license": "MIT",
   "keywords": [
