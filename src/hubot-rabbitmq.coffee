@@ -37,7 +37,7 @@ module.exports = (robot) ->
             try
               json = JSON.parse(body)
               json = json.message_stats
-              msg.send "RabbitMQ Message Stats:\n"
+              msg.send "RabbitMQ Message Stats:\n
                 published: #{json.publish}\n
                 published rate: #{json.publish_details.rate}\n
                 deliver_get: #{json.deliver_get}\n
