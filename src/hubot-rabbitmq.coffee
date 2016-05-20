@@ -44,8 +44,6 @@ module.exports = (robot) ->
                 deliver_get rate: #{json.deliver_get_details.rate}\n
                 confirm: #{json.confirm}\n
                 confirm rate: #{json.confirm_details.rate}\n
-                redeliver: #{json.redeliver}\n
-                redeliver rate: #{json.redeliver_details.rate}\n
                 get: #{json.get}\n
                 get rate: #{json.get_details.rate}\n
                 get_no_ack: #{json.get_no_ack}\n
